@@ -14,14 +14,17 @@ metadata:
 2. **Detect project type**: Identify language/framework from package.json, Cargo.toml, go.mod, requirements.txt, etc.
 3. **Extract metadata**: Get project name, description, scripts, dependencies from config files
 4. **Check existing README**: Review current README.md content if it exists
-5. **Generate README**: Create comprehensive README with appropriate sections
-6. **Show preview**: Display generated content for confirmation before writing
+5. **Detect codebase changes**: Analyze recent git changes to understand what's new or modified
+6. **Generate README**: Create comprehensive README with appropriate sections
+7. **Update existing README**: Edit current README.md to reflect codebase changes
+8. **Show preview**: Display generated content for confirmation before writing
 
 ## When to use me
 
 Use this when you want to:
 - Create a new README.md for a fresh project
 - Update an existing README to reflect current codebase state
+- Update README based on recent changes in the repository (new features, changed dependencies, etc.)
 - Add missing sections like installation, usage, or API docs
 - Generate documentation based on project structure
 
@@ -64,7 +67,16 @@ From config files:
 - Check for docs/, examples/, scripts/ folders
 - Look for main entry points
 
-### 4. Generate README Sections
+### 4. Detect Codebase Changes
+
+When updating an existing README:
+- Run `git diff` or check recent commits to see what changed
+- Identify new files, modified functionality, updated dependencies
+- Look at git log for recent features or changes
+- Check for new scripts in package.json or similar config files
+- Update relevant sections: features, installation, usage, API, etc.
+
+### 5. Generate README Sections
 
 Based on project type, include:
 - **Title & Badges**: name, version, license, CI status
@@ -80,7 +92,7 @@ Based on project type, include:
 - **License**: license info
 - **Directory Structure**: overview of code organization
 
-## Output Format
+### 6. Output Format
 
 Generated README follows common conventions:
 - Markdown format
@@ -91,7 +103,8 @@ Generated README follows common conventions:
 
 ## Options
 
-- **Update only**: Tell me "update" to only modify existing README sections
+- **Update**: Tell me "update" to update existing README based on recent codebase changes
+- **Update only**: Tell me "update only" to only modify existing README sections without adding new ones
 - **Minimal**: Tell me "minimal" to create a bare-bones README
 - **Detailed**: Tell me "detailed" to include all possible sections
 - **Custom sections**: Specify which sections to include
@@ -101,3 +114,7 @@ Generated README follows common conventions:
 User: "Generate README for this project"
 Skill finds: Node.js project with package.json, tests/, README exists
 Action: Analyze existing README, update with current package.json info, add missing sections
+
+User: "Update README based on recent changes"
+Skill finds: 5 new commits, new API endpoints added, new dependencies
+Action: Run git diff/log, identify changes, update Features/API/Installation sections accordingly

@@ -6,6 +6,7 @@ A collection of custom skills for AI coding agents (OpenCode and Claude Code).
 
 | Skill | Description |
 |-------|-------------|
+| [backend-developer](opencode/skills/backend-developer/) | Think and act like a professional backend developer - design APIs, work with databases, implement business logic |
 | [git-commit-review](opencode/skills/git-commit-review/) | Review staged changes, create conventional commit messages, and push to remote |
 | [readme-generator](opencode/skills/readme-generator/) | Analyze codebase and generate/update README.md with project information |
 
@@ -136,6 +137,8 @@ Your skill instructions here...
 ├── claude/           # Claude Code skills (currently empty - use global/per-project paths)
 ├── opencode/         # OpenCode skills
 │   └── skills/
+│       ├── backend-developer/
+│       │   └── SKILL.md
 │       ├── git-commit-review/
 │       │   └── SKILL.md
 │       └── readme-generator/
