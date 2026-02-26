@@ -134,14 +134,13 @@ Your skill instructions here...
 
 ```
 .
-├── claude/           # Claude Code skills (currently empty - use global/per-project paths)
-├── opencode/         # OpenCode skills
-│   └── skills/
-│       ├── backend-developer/
-│       │   └── SKILL.md
-│       ├── git-commit-review/
-│       │   └── SKILL.md
-│       └── readme-generator/
-│           └── SKILL.md
+├── claude/skills/           # Claude Code skills
+│   ├── backend-developer/
+│   ├── git-commit-review/
+│   └── readme-generator/
+├── opencode/skills/         # OpenCode skills
+│   ├── backend-developer/
+│   ├── git-commit-review/
+│   └── readme-generator/
 └── README.md
 ```
